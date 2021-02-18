@@ -17,6 +17,11 @@ class Manager {
     getEmail() {
         return this.email;
     }
+
+    getRole() {
+        return "Manager";
+    }
+
     
 }
 

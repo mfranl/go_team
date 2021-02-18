@@ -16,6 +16,10 @@ class Intern {
         return this.email;
     }
     
+    getRole() {
+        return "Intern";
+    }
+
 }
 
 module.exports = Intern;
