@@ -1,47 +1,19 @@
-const Employee = require("../lib/Employee")
-const Intern = require("../lib/Intern")
+const Intern = require("../lib/Intern");
 
-test('create new employee and check name', () => {
+test("Can set school via constructor", () => {
+    const testValue = "UCLA";
+    const e = new Intern("Foo", 1, "test@test.com", testValue);
+    expect(e.school).toBe(testValue);
+});
 
-    const intern = new Intern('Wendy', 4, 'wtekverk@gmail.com', 'Denver University');
+test("getRole() should return \"Intern\"", () => {
+    const testValue = "Intern";
+    const e = new Intern("Foo", 1, "test@test.com", "UCLA");
+    expect(e.getRole()).toBe(testValue);
+});
 
-    expect(intern.name).toBe('Wendy');
-
-
-})
-
-test('create new employee and check id', () => {
-
-    const intern = new Intern('Wendy', 4, 'wtekverk@gmail.com', 'Denver University');
-
-    expect(intern.id).toBe(4);
-
-
-})
-
-test('create new employee and check email', () => {
-
-    const intern = new Intern('Wendy', 4, 'wtekverk@gmail.com', 'Denver University');
-
-    expect(intern.email).toBe('wtekverk@gmail.com');
-
-
-})
-
-test('create new employee and check office number', () => {
-
-    const intern = new Intern('Wendy', 4, 'wtekverk@gmail.com', 'Denver University');
-
-    expect(intern.school).toBe("Denver University");
-
-
-})
-
-test('create new employee and check role', () => {
-
-    const intern = new Intern('Wendy', 4, 'wtekverk@gmail.com', 'Denver University');
-
-    expect(intern.getRole()).toBe("Intern");
-
-
-})
+test("Can get school via getSchool()", () => {
+    const testValue = "UCLA";
+    const e = new Intern("Foo", 1, "test@test.com", testValue);
+    expect(e.getSchool()).toBe(testValue);
+});
